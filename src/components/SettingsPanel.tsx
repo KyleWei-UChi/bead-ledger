@@ -4,7 +4,7 @@ import { zForServiceLevel } from '../domain/forecast';
 import { MARD_BY_CODE } from '../palette/mard221';
 import type { Settings } from '../domain/types';
 import { hexFor } from '../lib/colors';
-import { STORE_TARGET } from '../store';
+import { APP_VERSION, STORE_TARGET } from '../store';
 import { saveFile } from '../store/download';
 import { useAppStore } from '../store/useAppStore';
 import { CodePicker } from './CodePicker';
@@ -241,6 +241,10 @@ export function SettingsPanel() {
           <div>
             <dt className="text-xs tracking-wide text-ink-muted uppercase">Last change</dt>
             <dd className="tnum">{new Date(state.updatedAt).toLocaleString()}</dd>
+          </div>
+          <div>
+            <dt className="text-xs tracking-wide text-ink-muted uppercase">App version</dt>
+            <dd className="tnum">{APP_VERSION}</dd>
           </div>
         </dl>
 

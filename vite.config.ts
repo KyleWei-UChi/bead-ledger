@@ -1,8 +1,14 @@
+import { readFileSync } from 'node:fs';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
 const API_PORT = Number(process.env.BEAD_API_PORT ?? 8787);
+
+/** Single source of truth for the release version: package.json. */
+const { version: APP_VERSION } = JSON.parse(
+  readFileSync(new URL('./package.json', import.meta.url), 'utf8'),
+) as { version: string };
 
 export default defineConfig(({ mode }) => ({
   plugins: [react(), tailwindcss()],
@@ -10,6 +16,7 @@ export default defineConfig(({ mode }) => ({
   // instead of the local file server. See src/store/index.ts.
   define: {
     __STORE_TARGET__: JSON.stringify(mode === 'artifact' ? 'artifact' : 'http'),
+    __APP_VERSION__: JSON.stringify(APP_VERSION),
   },
   build: {
     outDir: mode === 'artifact' ? 'dist-artifact' : 'dist',

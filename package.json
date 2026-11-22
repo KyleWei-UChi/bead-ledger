@@ -1,7 +1,7 @@
 {
-  "name": "bead-fusing-tracker",
+  "name": "bead-ledger",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "description": "Bead inventory and consumption tracker for the MARD 221 fuse-bead palette",
   "license": "MIT",

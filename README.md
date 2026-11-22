@@ -32,7 +32,7 @@ is no account, no telemetry and no network call.
 Needs **Node 18 or newer**. Nothing else.
 
 ```bash
-git clone https://github.com/KyleWei-UChi/bead-ledger.git
+git clone https://github.com/YOUR-USERNAME/bead-ledger.git
 cd bead-ledger
 npm install
 npm run seed     # optional: a fabricated year of history to look around
@@ -174,6 +174,11 @@ reused.
 Issues and pull requests are welcome, particularly palette hex corrections and
 support for other bead brands' code systems. The domain layer has tests; please
 keep them passing (`npm test`).
+
+## Version
+
+Current release: **1.0.0**. [CHANGELOG.md](CHANGELOG.md) records what changed in
+each one, and flags any release that alters the shape of `data/beads.json`.
 
 ## Licence
 
