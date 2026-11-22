@@ -1,0 +1,39 @@
+{
+  "name": "bead-fusing-tracker",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Bead inventory and consumption tracker for the MARD 221 fuse-bead palette",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently -n server,web -c magenta,cyan \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "node --watch server/index.mjs",
+    "dev:web": "vite",
+    "build": "tsc --noEmit && vite build",
+    "build:artifact": "tsc --noEmit && vite build --mode artifact && node scripts/build-artifact.mjs",
+    "preview": "vite preview",
+    "start": "node server/index.mjs",
+    "stop": "pkill -f \"[s]erver/index.mjs\" && echo \"bead-ledger server stopped\" || echo \"bead-ledger server was not running\"",
+    "app": "node scripts/make-app.mjs",
+    "icon": "node scripts/make-icon.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "seed": "node scripts/seed-demo.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/node": "^26.6.6",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8"
+  }
+}

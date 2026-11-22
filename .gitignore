@@ -1,0 +1,14 @@
+node_modules/
+dist/
+dist-artifact/
+.DS_Store
+*.log
+
+# Your personal inventory lives here. It is deliberately NOT committed so the
+# repo can be open-sourced without publishing your bead stock and blueprints.
+# Back it up yourself (Settings -> Export JSON), or remove this line if you
+# want the data versioned in a private repo.
+data/*.json
+data/backups/
+data/images/
+build/
