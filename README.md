@@ -32,7 +32,7 @@ is no account, no telemetry and no network call.
 Needs **Node 18 or newer**. Nothing else.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/bead-ledger.git
+git clone https://github.com/KyleWei-UChi/bead-ledger.git
 cd bead-ledger
 npm install
 npm run seed     # optional: a fabricated year of history to look around
